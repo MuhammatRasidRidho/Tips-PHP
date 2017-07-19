@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xml>
   <track>
-    <path>audio/satu.mp3</path>
-    <title>satu</title>
+    <path>audio/lima.mp3</path>
+    <title>lima</title>
   </track>
   <track>
-    <path>audio/juta.mp3</path>
-    <title>juta</title>
+    <path>audio/ratus.mp3</path>
+    <title>ratus</title>
+  </track>
+  <track>
+    <path>audio/sebelas.mp3</path>
+    <title>sebelas</title>
   </track>
   <track>
     <path>audio/rupiah.mp3</path>

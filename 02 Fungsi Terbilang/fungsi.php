@@ -1,3 +1,5 @@
+<?php error_reporting(0); ?>
+
 <strong>Fungsi Terbilang</strong>
 <br>
 <form method="post" action="">Input Jumlah Uang
@@ -8,7 +10,10 @@
 Nilai Angka : <?php echo $_POST['jumlah']; ?> <br />
 Hasil Terbilang : <?php echo Terbilang($_POST['jumlah']); ?>
 </form>
-<?php function Terbilang($satuan){
+<?php 
+
+
+function Terbilang($satuan){
 	$huruf = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", "Sebelas");
 	if ($satuan < 12)
 		return " " . $huruf[$satuan];
