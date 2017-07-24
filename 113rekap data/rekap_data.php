@@ -1,7 +1,10 @@
 <?php
-mysql_connect("localhost","root","");
-mysql_select_db("upb");
-$ambil = mysql_query("SELECT DISTINCT NPM, Nama, Alamat, Hp, count(NPM) AS jumlah FROM mahasiswa GROUP BY Alamat");
+error_reporting(0);
+
+
+$con = mysqli_connect("localhost","root","","upb");
+
+$ambil = mysqli_query($con, "SELECT  NPM, Nama, Alamat, Hp, count(NPM) AS jumlah FROM mahasiswa GROUP BY Alamat");
 
 echo "<table width='500' border='1'>
 		<tr>
@@ -15,7 +18,7 @@ echo "<table width='500' border='1'>
 			<th width='24%'>Jumlah</th>
 		</tr>";
 $k = 1;
-while($data = mysql_fetch_array($ambil)){
+while($data = mysqli_fetch_array($ambil)){
 echo "<tr>
 		<td>$k</td>
 		<td>$data[NPM]</td>

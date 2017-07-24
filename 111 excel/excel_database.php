@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(0);
+
  
 // Nama File Excel
 $date = date('Ymd-his');

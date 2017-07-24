@@ -1,6 +1,9 @@
 <?php
-mysql_connect("localhost","root","");
-mysql_select_db("upb");
+error_reporting(0);
+
+$con = mysqli_connect("localhost","root","","upb");
+
+
 include "fungsi_paging.php";
 echo "<h2>Daftar Kelas</h2>
 <table border='1'>
@@ -8,10 +11,10 @@ echo "<h2>Daftar Kelas</h2>
 $p = new Paging;
 $batas = 2;
 $posisi = $p->cariPosisi($batas);
-$tampil=mysql_query("SELECT * FROM mahasiswa LIMIT
+$tampil=mysqli_query($con, "SELECT * FROM mahasiswa LIMIT
 $posisi, $batas");
 $no=$posisi+1;
-while ($r=mysql_fetch_array($tampil)){
+while ($r=mysqli_fetch_array($tampil)){
 echo "<tr><td>$no</td>
 <td>$r[NPM]</td>
 <td>$r[Alamat]</td>
@@ -20,7 +23,7 @@ echo "<tr><td>$no</td>
 $no++;
 }
 echo "</table>";
-$jmldata = mysql_num_rows(mysql_query("SELECT * FROM mahasiswa"));
+$jmldata = mysqli_num_rows(mysqli_query("SELECT * FROM mahasiswa"));
 $jmlhalaman = $p->jumlahHalaman($jmldata, $batas);
 $linkHalaman = $p->navHalaman($_GET[halaman], $jmlhalaman);
 echo "$linkHalaman";

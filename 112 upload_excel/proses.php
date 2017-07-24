@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(0);
+
 // panggil file excel_reader
 include "excel_reader2.php";
  
